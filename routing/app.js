@@ -1,10 +1,11 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 
 const port = 3000
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.sendFile(path.join(__dirname, 'home.html'))
 })
 
 app.get('/about', (req, res) => {
@@ -16,7 +17,33 @@ app.get('/contact', (req, res) => {
 })
 
 app.get('/temp', (req, res) => {
-    res.send('Templates')
+    res.json([
+        {
+          "name": "Alice Johnson",
+          "age": 28,
+          "gender": "female"
+        },
+        {
+          "name": "Bob Smith",
+          "age": 34,
+          "gender": "male"
+        },
+        {
+          "name": "Carol White",
+          "age": 23,
+          "gender": "female"
+        },
+        {
+          "name": "David Brown",
+          "age": 45,
+          "gender": "male"
+        },
+        {
+          "name": "Eva Green",
+          "age": 31,
+          "gender": "female"
+        }
+      ])
 })
 
 app.listen(port, () => {
