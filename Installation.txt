@@ -1,0 +1,13 @@
+# Download Node.js
+
+# mkdir helloworld
+
+# cd helloworld
+
+# npm init -y
+
+# type nul > app.js
+
+# npm install express
+
+# node app.js
